@@ -27,7 +27,7 @@ class PostsController < ApplicationController
   def create
     #raise post_params.inspect
     if !post_params[:tags_attributes][:name].present?
-      post_params[:tags_attributes].delete
+      post_params.delete(:tags_attributes)
     end
     @post = Post.new(post_params)
 
