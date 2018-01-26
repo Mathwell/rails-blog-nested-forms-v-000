@@ -10,7 +10,10 @@ class Post < ActiveRecord::Base
   def tags_attributes(tag_hash)
     binding.pry
     if tag_hash[:name].present?
-      Tag.find_or_create_by(tag_hash[:name])
+      tag=Tag.find_or_create_by(tag_hash[:name])
+    end
+    if !self.tags.include?(tag)
+      self.post_tags.build(:category =>category)
     end
   end
 end
