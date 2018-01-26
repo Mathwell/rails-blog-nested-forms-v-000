@@ -25,6 +25,7 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
+    raise post_params.inspect
     if !post_params[:tags_attributes][:name].present?
       post_paramsp[:tags_attributes].delete
     end
