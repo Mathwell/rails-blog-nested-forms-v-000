@@ -26,10 +26,10 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     raise post_params.inspect
-    #if !post_params[:tags_attributes][:name].present?
-    #  post_params[:tags_attributes].delete
-    #end
-        @post = Post.new(post_params)
+    if !post_params[:tags_attributes][:name].present?
+      post_params[:tags_attributes].delete
+    end
+    @post = Post.new(post_params)
 
     respond_to do |format|
       if @post.save
