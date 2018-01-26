@@ -25,8 +25,8 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    if !post_params[:tag_attributes][:name].present?
-      post_paramsp[:tag_attributes].delete
+    if !post_params[:tags_attributes][:name].present?
+      post_paramsp[:tags_attributes].delete
     end
         @post = Post.new(post_params)
 
