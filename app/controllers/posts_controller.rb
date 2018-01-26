@@ -10,12 +10,13 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+
   end
 
   # GET /posts/new
   def new
     @post = Post.new
-    #@post.tags.build
+    @post.tags.build
   end
 
   # GET /posts/1/edit
